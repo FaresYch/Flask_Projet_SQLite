@@ -83,17 +83,20 @@ def enregistrer_client():
 
 @app.route('/fiche_nom/', methods=['GET'])
 def fiche_nom_get():
-    return render_template('formulaire.html')
+    return render_template('formulaire_nom.html')
     
-@app.route('/fiche_nom/', methods=['GET', 'POST'])
+@app.route('/fiche_nom/', methods=['POST'])
 def fiche_nom_post():
-    clients_trouves = []
-    if request.method == 'POST':
-        nom_client = request.form['nom']
-        clients_trouves = chercher_client_par_nom(nom_client)
-    
-    return render_template('fiche_nom.html', clients=clients_trouves)
+    nom_client = request.form['nom']
 
-                                                                                                              
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom_client))
+    data = cursor.fetchall()
+    conn.close()
+    # Rendre le template HTML et transmettre les données
+    return render_template('read_data.html', data=data)
+
+                                                                                                             
 if __name__ == "__main__":
   app.run(debug=True)
