@@ -67,6 +67,10 @@ def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
 
+@app.route('/fiche_nom/')
+def fiche_nom():
+    return render_template('fiche_nom.html')
+
     # Connexion à la base de données
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
