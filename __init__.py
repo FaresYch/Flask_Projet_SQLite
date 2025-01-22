@@ -67,10 +67,6 @@ def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
 
-@app.route('/fiche_nom/')
-def fiche_nom():
-    return render_template('fiche_nom.html')
-
     # Connexion à la base de données
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
@@ -80,6 +76,24 @@ def fiche_nom():
     conn.commit()
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
-                                                                                                                                       
+
+
+
+
+
+@app.route('/fiche_nom/', methods=['GET'])
+def fiche_nom_get():
+    return render_template('formulaire.html')
+    
+@app.route('/fiche_nom/', methods=['GET', 'POST'])
+def fiche_nom_post():
+    clients_trouves = []
+    if request.method == 'POST':
+        nom_client = request.form['nom']
+        clients_trouves = chercher_client_par_nom(nom_client)
+    
+    return render_template('fiche_nom.html', clients=clients_trouves)
+
+                                                                                                              
 if __name__ == "__main__":
   app.run(debug=True)
