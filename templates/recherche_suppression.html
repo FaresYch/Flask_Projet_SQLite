@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librairie - Enregistrement d'un Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5em 1em;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            display: block;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            padding: 2em;
+        }
+
+        .content h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            margin: 2em auto;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 1em);
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Page d'accueil</a>
+        <a href="#">Se connecter</a>
+        <a href="#">Consulter la base</a>
+        <a href="#">Enregistrer un client</a>
+    </div>
+
+    <div class="content">
+        <h1>Enregistrer un nouveau client</h1>
+        <form action="./enregistrer_client" method="POST">
+            <!-- Enregistrer_client 5) action submit -> renvoit sur enregistrer_client() en mode POST --> 
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required><br>
+            <button type="submit">Enregistrer</button>
+            <!-- Enregistrer_CLient 4) Submit -->
+        </form>
+        <div class="content">
+            <h2>Supprimer un client</h2>
+            <form action="./supprimer_client" method="POST">
+                <!-- Suppression d'un client par ID -->
+                <label for="id_client">ID du client :</label>
+                <input type="text" id="id_client" name="id_client" required><br>
+                <button type="submit">Supprimer</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
