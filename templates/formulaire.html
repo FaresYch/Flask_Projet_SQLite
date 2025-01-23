@@ -6,13 +6,13 @@
     <title>Formulaire d'enregistrement d'un nouveau client</title>
 </head>
 <body>
-    <h1>Enregistrer un nouveau client</h1>
-    <form action="./enregistrer_client" method="POST">
+    <h1>Enregistrer un nouveau client</h1>  <!--Enregistrer_ client 3) Arrive ici -->
+    <form action="./enregistrer_client" method="POST"> <!-- ENregistrer_client 5) action submit -> renvoit sur enregistrer_client() en mode POST --> 
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required><br><br>
         <label for="prenom">Prénom :</label>
         <input type="text" id="prenom" name="prenom" required><br><br>
-        <button type="submit">Enregistrer</button>
+        <button type="submit">Enregistrer</button> <!-- Enregistrer_CLient 4) Submit -->
     </form>
 </body>
 </html>
