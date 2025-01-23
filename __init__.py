@@ -77,10 +77,6 @@ def enregistrer_client():
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 
-
-
-
-
 @app.route('/fiche_nom/', methods=['GET'])
 def fiche_nom_get():
     return render_template('formulaire_nom.html')
