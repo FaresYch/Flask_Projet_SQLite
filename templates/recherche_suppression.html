@@ -90,7 +90,7 @@
         <h1>Suppression d'un client</h1>
         <div class="content">
             <h2>Supprimer un client</h2>
-            <form action="./supprimer_client_post" method="POST">
+            <form action="{{ url_for('supprimer_client_post') }}" method="POST">
                 <!-- Suppression d'un client par ID -->
                 <label for="id_client">ID du client :</label>
                 <input type="text" id="id_client" name="id_client" required><br>
