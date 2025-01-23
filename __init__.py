@@ -79,7 +79,7 @@ def enregistrer_client():
 
 @app.route('/fiche_nom/')
 def fiche_nom_get():
-    return render_template('formulaire.html')
+    return render_template('formulaire_nom.html')
     
 @app.route('/fiche_nom', methods=['POST'])
 def fiche_nom_post():
