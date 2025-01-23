@@ -91,7 +91,7 @@ def fiche_nom_post():
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
-    return render_template('read_data.html', data=data)
+    return render_template('/consultation/', data=data)
 
 @app.route('/resultat_recherche/')
 def ReadBDDRecherche():
