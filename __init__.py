@@ -62,7 +62,7 @@ def ReadBDD():
 def formulaire_client():
     return render_template('formulaire.html')  # Enregistrer_ client 2) afficher formulaire_authentification.html 
 
-@app.route('/enregistrer_client', methods=['POST'])
+@app.route('/enregistrer_client', methods=['POST']) # Engregistrer_Client 6) traite la requete POST
 def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
