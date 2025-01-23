@@ -58,9 +58,9 @@ def ReadBDD():
     conn.close()
     return render_template('read_data.html', data=data)
 
-@app.route('/enregistrer_client', methods=['GET'])
+@app.route('/enregistrer_client', methods=['GET']) #Enregistrer_client 1) Arrive ici 
 def formulaire_client():
-    return render_template('formulaire.html')  # afficher le formulaire
+    return render_template('formulaire.html')  # Enregistrer_ client 2) afficher formulaire_authentification.html 
 
 @app.route('/enregistrer_client', methods=['POST'])
 def enregistrer_client():
