@@ -85,12 +85,13 @@ def fiche_nom_get():
 def fiche_nom_post():
     nom_client = request.form['nom']
 
-    conn = sqlite3.connect('database.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom_client,))
-    data = cursor.fetchall()
-    conn.close()
-    # Rendre le template HTML et transmettre les données
+    try:
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom_client,))
+        data = cursor.fetchall()
+    finally:
+        conn.close()
     return render_template('read_data.html', data=data)
                                                                                                              
 if __name__ == "__main__":
