@@ -77,6 +77,23 @@ def enregistrer_client():
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 
+@app.route('/supprimer_client/')
+def supprimer_client():
+    return render_template('recherche_suppression.html')
+    
+@app.route('/supprimer_client', methods=['POST'])
+def supprimer_client_post():
+    nom_client = request.form['nom']
+
+    try:
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom_client,))
+        data = cursor.fetchall()
+    finally:
+        conn.close()
+    return render_template('read_data.html', data=data)
+
 @app.route('/fiche_nom/')
 def fiche_nom_get():
     return render_template('formulaire_nom.html')
