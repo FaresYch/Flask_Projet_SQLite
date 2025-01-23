@@ -94,7 +94,7 @@ def fiche_nom_post():
     return render_template('read_data.html', data=data)
 
 @app.route('/resultat_recherche/')
-def ReadBDD():
+def ReadBDDRecherche():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM clients;')
