@@ -83,12 +83,12 @@ def supprimer_client():
     
 @app.route('/supprimer_client', methods=['POST'])
 def supprimer_client_post():
-    nom_client = request.form['nom']
+    id_client = request.form['id']
 
     try:
         conn = sqlite3.connect('database.db')
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom_client,))
+        cursor.execute('DELETE FROM clients WHERE id = ?', (id_client,))
         data = cursor.fetchall()
     finally:
         conn.close()
