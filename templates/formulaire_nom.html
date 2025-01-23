@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Rechercher un client sur la base de son nom </h1>  <!--Enregistrer_ client 3) Arrive ici -->
-    <form action="{{ url_for('fiche_nom') }}" method="POST"> <!-- ENregistrer_client 5) action submit -> renvoit sur enregistrer_client() en mode POST --> 
+    <form action="{{ url_for('fiche_nom_post') }}" method="POST"> <!-- ENregistrer_client 5) action submit -> renvoit sur enregistrer_client() en mode POST --> 
         <label for="nom">Nom du client :</label>
         <input type="text" id="nom" name="nom" required><br><br>
         <button type="submit">Rechercher</button> <!-- Enregistrer_CLient 4) Submit -->
