@@ -66,15 +66,13 @@ def formulaire_client():
 def enregistrer_client():
     nom = request.form['nom']
     prenom = request.form['prenom']
-    id = request.form['id']
-    creation = request.form['creation']
     adresse = request.form['adresse']
     # Connexion à la base de données
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
 
     # Exécution de la requête SQL pour insérer un nouveau client
-    cursor.execute('INSERT INTO clients (created, nom, prenom, adresse) VALUES (?, ?, ?, ?)', (id, nom, prenom, adresse))
+    cursor.execute('INSERT INTO clients (nom, prenom, adresse) VALUES ( ?, ?, ?)', (nom, prenom, adresse))
     conn.commit()
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
