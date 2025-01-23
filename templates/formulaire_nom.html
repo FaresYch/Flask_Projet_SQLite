@@ -1,1 +1,17 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de recherche d'un client</title>
+</head>
+<body>
+    <h1>Rechercher un client sur la base de son nom </h1>  <!--Enregistrer_ client 3) Arrive ici -->
+    <form action="./enregistrer_client" method="POST"> <!-- ENregistrer_client 5) action submit -> renvoit sur enregistrer_client() en mode POST --> 
+        <label for="nom">Nom du client :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <button type="submit">Rechercher</button> <!-- Enregistrer_CLient 4) Submit -->
+    </form>
+</body>
+</html>
