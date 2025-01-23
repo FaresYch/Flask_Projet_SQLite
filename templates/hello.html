@@ -1,9 +1,30 @@
 <!doctype html>
-<head></head>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Page d'accueil</title>
 </head>
 <body>
-  <title>Flask Server</title>
-  <h1> Hello from Flask Server !</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <h1>Bienvenue sur notre site Flask</h1>
+        <p>Explorez notre contenu et découvrez nos services.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mon Site Flask. Tous droits réservés.</p>
+    </footer>
 </body>
+</html>
