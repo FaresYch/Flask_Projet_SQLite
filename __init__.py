@@ -92,7 +92,7 @@ def supprimer_client_post():
         data = cursor.fetchall()
     finally:
         conn.close()
-    return render_template('read_data.html', data=data)
+    return redirect('/consultation/')
 
 @app.route('/fiche_nom/')
 def fiche_nom_get():
