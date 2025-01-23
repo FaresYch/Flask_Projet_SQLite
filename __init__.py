@@ -83,7 +83,7 @@ def supprimer_client():
     
 @app.route('/supprimer_client', methods=['POST'])
 def supprimer_client_post():
-    id_client = request.form['id']
+    id_client = request.form['id_client']
 
     try:
         conn = sqlite3.connect('database.db')
