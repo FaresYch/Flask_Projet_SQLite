@@ -93,7 +93,7 @@
             <form action="{{ url_for('supprimer_client_post') }}" method="POST">
                 <!-- Suppression d'un client par ID -->
                 <label for="id_client">ID du client :</label>
-                <input type="text" id="id_client" name="id_client" required><br>
+                <input type="int" id="id_client" name="id_client" required><br>
                 <button type="submit">Supprimer</button>
             </form>
         </div>
