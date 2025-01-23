@@ -77,11 +77,11 @@ def enregistrer_client():
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 
-@app.route('/fiche_nom/', methods=['GET'])
+@app.route('/fiche_nom', methods=['GET'])
 def fiche_nom_get():
     return render_template('formulaire_nom.html')
     
-@app.route('/fiche_nom/', methods=['POST'])
+@app.route('/fiche_nom', methods=['POST'])
 def fiche_nom_post():
     nom_client = request.form['nom']
 
