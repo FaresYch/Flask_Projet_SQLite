@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Authentification</title>
 </head>
 <body>
-    <h2>Authentification</h2>
-    {% if error %}
-        <p style="color: red;">Identifiant ou mot de passe incorrect.</p>
-    {% endif %}
-    <form action="{{ url_for('authentification') }}" method="post">
-        <label for="username">Nom d'utilisateur:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Mot de passe:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Se connecter">
-    </form>
+    <div class="auth-container">
+        <h2>Authentification</h2>
+        {% if error %}
+            <p class="error-message">Identifiant ou mot de passe incorrect.</p>
+        {% endif %}
+        <form action="{{ url_for('authentification') }}" method="post" class="auth-form">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn">Se connecter</button>
+            </div>
+        </form>
+        <p class="register-link">Pas encore inscrit ? <a href="{{ url_for('register') }}">Créez un compte</a>.</p>
+    </div>
 </body>
 </html>
