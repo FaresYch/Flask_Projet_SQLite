@@ -109,7 +109,7 @@ def fiche_nom_post():
         data = cursor.fetchall()
     finally:
         conn.close()
-    return redirect('/consultation/')
+    return render_template('read_data.html', data=data)
                                                                                                              
 if __name__ == "__main__":
   app.run(debug=True)
