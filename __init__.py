@@ -89,7 +89,7 @@ def supprimer_client_post():
         conn = sqlite3.connect('database.db')
         cursor = conn.cursor()
         cursor.execute('DELETE FROM clients WHERE id = ?', (id_client,))
-        data = cursor.fetchall()
+        conn.commit()
     finally:
         conn.close()
     return redirect('/consultation/')
