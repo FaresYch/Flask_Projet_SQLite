@@ -16,6 +16,16 @@ def est_authentifie():
 def hello_world():
     return render_template('hello.html')
 
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
+@app.route('/login')
+def hello_world():
+    return render_template('login.html')
+
 @app.route('/lecture')
 def lecture():
     if not est_authentifie():
