@@ -16,6 +16,17 @@ def est_authentifie():
 def hello_world():
     return render_template('hello.html')
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html)
+
+
+@app.route('/register')
+def login():
+    return render_template('register.html)
+
+                           
 @app.route('/lecture')
 def lecture():
     if not est_authentifie():
@@ -36,9 +47,9 @@ def authentification():
         else:
             # Afficher un message d'erreur si les identifiants sont incorrects
             return render_template('formulaire_authentification.html', error=True)
-
     return render_template('formulaire_authentification.html', error=False)
 
+                           
 @app.route('/fiche_client/<int:post_id>')
 def Readfiche(post_id):
     conn = sqlite3.connect('database.db')
